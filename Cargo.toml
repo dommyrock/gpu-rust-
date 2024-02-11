@@ -1,0 +1,14 @@
+[package]
+name = "gpu-rust"
+version = "0.1.0"
+edition = "2021"
+
+# rustup default x86_64-pc-windows-msvc
+# [target.x86_64-pc-windows-msvc]
+# rustflags = ["-C", "link-arg=/LIBPATH:C:\\Users\\dpolzer\\me\\git\\gpu-rust\\cuda_info.dll"]
+
+
+[dependencies]
+
+[build-dependencies]
+bindgen_cuda = "0.1.4"
