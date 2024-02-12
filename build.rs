@@ -14,3 +14,10 @@ fn main() {
         panic!("Build failed with error:\n{}", error_message);
     }
 }
+
+//bindgen_cuda
+// fn main() {
+//     let builder = bindgen_cuda::Builder::default();
+//     let bindings = builder.build_ptx().unwrap();
+//     bindings.write("src/lib.rs");
+// }

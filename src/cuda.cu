@@ -14,7 +14,7 @@ int main()
 
     cudaGetDeviceProperties(&deviceProp, dev);
 
-    printf("Total number of cores : %d \n", deviceProp.multiProcessorCount);
+    printf("Total number of cores (SM's - Straming multiprocessors): %d \n", deviceProp.multiProcessorCount);
     printf("Warp size : %d \n", deviceProp.warpSize);
     printf("Max threads per MultiProcessor : %d \n", deviceProp.maxBlocksPerMultiProcessor);
     printf("Max threads per block : %d \n", deviceProp.maxThreadsPerBlock);
