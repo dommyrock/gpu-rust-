@@ -1,1 +1,4 @@
 /target
+/src/cuda.exe
+/src/cuda.exp
+/src/cuda.lib

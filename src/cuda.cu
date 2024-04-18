@@ -14,10 +14,15 @@ int main()
 
     cudaGetDeviceProperties(&deviceProp, dev);
 
-    printf("Total number of cores (SM's - Straming multiprocessors): %d \n", deviceProp.multiProcessorCount);
-    printf("Warp size : %d \n", deviceProp.warpSize);
-    printf("Max threads per MultiProcessor : %d \n", deviceProp.maxBlocksPerMultiProcessor);
+        // Calculate total number of threads
+    int total_threads = deviceProp.multiProcessorCount * deviceProp.maxThreadsPerBlock;
+
+    printf("Total number of cores (SM's - Streaming multiprocessors): %d \n", deviceProp.multiProcessorCount);
     printf("Max threads per block : %d \n", deviceProp.maxThreadsPerBlock);
+    printf("Total number of threads: %d \n", total_threads);
+    printf("\n");
+    printf("Warp size : %d \n", deviceProp.warpSize);
+    printf("Max Blocks per MultiProcessor : %d \n", deviceProp.maxBlocksPerMultiProcessor);
     printf("Max grid dimensions : %d x %d x %d\n", deviceProp.maxGridSize[0], deviceProp.maxGridSize[1], deviceProp.maxGridSize[2]);
     printf("Max block dimensions : %d x %d x %d\n", deviceProp.maxThreadsDim[0], deviceProp.maxThreadsDim[1], deviceProp.maxThreadsDim[2]);
     printf("----other---\n");
